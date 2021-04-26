@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Receta;
 use App\Models\Blog;
+use App\Models\Receta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class RecetaController extends Controller
 {
@@ -66,11 +67,14 @@ class RecetaController extends Controller
 
         //$rutaImagen = $request['imagen']->store('upload-obras', 'public');
 
-        $rutaImagen = request()->file('imagen')->store(
-            'images',
-            's3'
-        );
+        //$rutaImagen = request()->file('imagen')->store(
+        //    'images',
+        //    's3'
+        //);
         
+        $extension = $request->file('imagen')->extension();
+        $rutaImagen = Storage::disk('s3')->putFileAs('images', $request->file('imagen'),time().'.'.$extension,'public');
+
         //$img = Image::make(public_path("storage/{$rutaImagen}"));
         //$img->save();
 
