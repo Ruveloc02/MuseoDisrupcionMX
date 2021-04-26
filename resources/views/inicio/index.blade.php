@@ -50,7 +50,7 @@
             @foreach($obras as $obra)
             <div class="tarjeta mr-4">
                 <div style="grid-area: imagen;
-                background: url('https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$receta->imagen}}');
+                background: url('https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$obra->imagen}}');
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
                 background-position: center;

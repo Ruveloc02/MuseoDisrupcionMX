@@ -11,7 +11,7 @@
         @foreach($todas as $nueva)
         <div class="tarjeta mr-4 mb-4">
             <div style="grid-area: imagen;
-            background: url('https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$receta->imagen}}');
+            background: url('https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$nueva->imagen}}');
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
             background-position: center;
