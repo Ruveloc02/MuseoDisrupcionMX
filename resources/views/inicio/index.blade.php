@@ -50,7 +50,7 @@
             @foreach($obras as $obra)
             <div class="tarjeta mr-4">
                 <div style="grid-area: imagen;
-                background: url('/storage/{{$obra->imagen}}');
+                background: url('https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$receta->imagen}}');
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
                 background-position: center;
@@ -79,8 +79,8 @@
         <div class="row">
             @foreach($blogs as $blog)
             <div class="tarjeta mr-4">
-                <div style="grid-area: imagen;
-                background: url('/storage/{{$blog->portada}}');
+                <div style="grid-area: imagen; https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$blog->portada}}
+                background: url('https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$blog->portada}}');
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
                 background-position: center;

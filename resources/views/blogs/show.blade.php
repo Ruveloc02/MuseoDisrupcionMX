@@ -10,7 +10,7 @@
         <h1 class="text-center mb-4 text-primary font-weight-bold">{{$blog->titulo}}</h1>
 
         <div class="imagen-receta d-flex justify-content-center">
-            <img src="/storage/{{$blog->portada}}" alt="" class="w-75 mb-3">
+            <img src="https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$blog->portada}}" alt="" class="w-75 mb-3">
         </div>
 
         <div class="receta-meta fuente-obra">

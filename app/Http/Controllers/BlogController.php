@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -54,10 +55,8 @@ class BlogController extends Controller
             'contenido' => 'required',
         ]);
 
-        $rutaImagen = $request['portada']->store('upload-blogs', 'public');
-        
-        $img = Image::make(public_path("storage/{$rutaImagen}"));
-        $img->save();
+        $extension = $request->file('portada')->extension();
+        $rutaImagen = Storage::disk('s3')->putFileAs('images', $request->file('portada'),time().'.'.$extension,'public');
 
 
         //Almacenar en la base de datos con un modelo
@@ -119,10 +118,8 @@ class BlogController extends Controller
         $blog->contenido = $data['contenido'];
 
         if(request('imagen')){
-            $rutaImagen = $request['imagen']->store('upload-blogs', 'public');
-        
-            $img = Image::make(public_path("storage/{$rutaImagen}"));
-            $img->save();
+            $extension = $request->file('portada')->extension();
+            $rutaImagen = Storage::disk('s3')->putFileAs('images', $request->file('portada'),time().'.'.$extension,'public');
 
             $blog->imagen = $rutaImagen;
         }

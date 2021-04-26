@@ -71,7 +71,7 @@ class RecetaController extends Controller
         //    'images',
         //    's3'
         //);
-        
+
         $extension = $request->file('imagen')->extension();
         $rutaImagen = Storage::disk('s3')->putFileAs('images', $request->file('imagen'),time().'.'.$extension,'public');
 
@@ -158,10 +158,8 @@ class RecetaController extends Controller
         $receta->urlCompra = $data['urlCompra'];
 
         if(request('imagen')){
-            $rutaImagen = $request['imagen']->store('upload-obras', 'public');
-        
-            $img = Image::make(public_path("storage/{$rutaImagen}"));
-            $img->save();
+            $extension = $request->file('imagen')->extension();
+            $rutaImagen = Storage::disk('s3')->putFileAs('images', $request->file('imagen'),time().'.'.$extension,'public');
 
             $receta->imagen = $rutaImagen;
         }
