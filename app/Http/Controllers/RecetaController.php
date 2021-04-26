@@ -65,8 +65,14 @@ class RecetaController extends Controller
         ]);
 
         $rutaImagen = $request['imagen']->store('upload-obras', 'public');
+
+        request()->file('imagen')->store(
+            'images',
+            's3'
+        );
         
-        
+        //$img = Image::make(public_path("storage/{$rutaImagen}"));
+        //$img->save();
 
         /*
         DB::table('recetas')->insert([
