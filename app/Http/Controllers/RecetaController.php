@@ -64,9 +64,9 @@ class RecetaController extends Controller
             'urlCompra' => 'required',
         ]);
 
-        $rutaImagen = $request['imagen']->store('upload-obras', 'public');
+        //$rutaImagen = $request['imagen']->store('upload-obras', 'public');
 
-        request()->file('imagen')->store(
+        $rutaImagen = request()->file('imagen')->store(
             'images',
             's3'
         );
