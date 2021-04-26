@@ -10,7 +10,7 @@
         <h1 class="titulo-responsive mb-4 text-primary font-weight-bold">{{$receta->titulo}}</h1>
 
         <div class="imagen-receta">
-            <img src="/storage/{{$receta->imagen}}" alt="" class="w-75 mb-3">
+            <img src="https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$receta->imagen}}" alt="" class="w-75 mb-3">
         </div>
 
         <div class="receta-meta fuente-obra">
