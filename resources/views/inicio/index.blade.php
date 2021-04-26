@@ -79,7 +79,7 @@
         <div class="row">
             @foreach($blogs as $blog)
             <div class="tarjeta mr-4">
-                <div style="grid-area: imagen; https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$blog->portada}}
+                <div style="grid-area: imagen; 
                 background: url('https://disrupcionmxdata.sfo3.digitaloceanspaces.com/{{$blog->portada}}');
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
