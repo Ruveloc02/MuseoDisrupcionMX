@@ -20,7 +20,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('favico/fav.png') }}">
+    <link rel="icon" href="favico/fav.png">
 
 </head>
 <body>
