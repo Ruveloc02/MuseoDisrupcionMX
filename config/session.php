@@ -126,7 +126,10 @@ return [
     |
     */
 
-    'cookie' => 'laravel_session',
+    'cookie' => env(
+        'SESSION_COOKIE',
+        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -152,7 +155,7 @@ return [
     |
     */
 
-    'domain' => 'https://museodisrupcionmx.com',
+    'domain' => env('SESSION_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------
