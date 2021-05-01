@@ -13,7 +13,7 @@
         <div class="contenedor-grid">
 
             <div class="parte-grid-img imagen-nosotros">
-                <img src="{{ asset('favico/fav.png') }}"  alt="" width="200">
+                <img src="{{ asset('favico/fav.png', true) }}"  alt="" width="200">
             </div>
 
             <div class="parte-grid">
